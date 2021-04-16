@@ -7,6 +7,8 @@
 
     internal sealed class Configuration : DbMigrationsConfiguration<DataAccessLayer.Concrete.Context>
     {
+
+        //The bridge between C # and SQL.
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
