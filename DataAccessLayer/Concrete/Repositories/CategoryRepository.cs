@@ -4,12 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete.Repositories
 {
-    public class CategoryRepository : IRepository<Category>
+    public class CategoryRepository : ICategoryDal
     {
         
         DbSet<Category> _object;
@@ -23,6 +24,16 @@ namespace DataAccessLayer.Concrete.Repositories
             }
         }
 
+        public List<Category> Get(Expression<Func<Category, bool>> filter)
+        {
+            using(Context context=new Context())
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+       
+
         public void Insert(Category category)
         {
             using(Context context = new Context())
@@ -33,7 +44,7 @@ namespace DataAccessLayer.Concrete.Repositories
            
         }
 
-        public List<Category> List()
+        public List<Category> GetAll()
         {
             using(Context context = new Context())
             {
