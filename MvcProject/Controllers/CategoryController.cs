@@ -23,7 +23,7 @@ namespace MvcProject.Controllers
         //    this._categoryService = categoryService;
         //}
 
-        CategoryManager cm = new CategoryManager();
+        CategoryManager categoryManager = new CategoryManager();
 
         // GET: Category
         public ActionResult Index()
@@ -32,12 +32,20 @@ namespace MvcProject.Controllers
         }
         public ActionResult GetCategoryList()
         {
-            var categoryValues = cm.GetAll();
-            return View(categoryValues);
+            //var categoryValues = categoryManager.GetAll();
+            return View();
         }
+        [HttpGet]
+        public ActionResult AddCategory()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
         public ActionResult AddCategory(Category category)
         {
-            cm.CategoryAdd(category);
+            //categoryManager.CategoryAdd(category);
             return RedirectToAction("GetCategoryList");
         }
 

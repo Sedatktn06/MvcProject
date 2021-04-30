@@ -10,34 +10,20 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class CategoryManager:ICategoryService
+    public class CategoryManager : ICategoryService
     {
-        //ICategoryDal _categoryDal;
-        //public CategoryManager(ICategoryDal categoryDal)
-        //{
-        //    _categoryDal = categoryDal;
-        //}
-        //public CategoryManager()
-        //{
 
-        //}
 
-        GenericRepository<Category> repository = new GenericRepository<Category>();
 
+        ICategoryDal _categoryDal;
+        public CategoryManager(ICategoryDal categoryDal)
+        {
+            _categoryDal = categoryDal;
+        }
+        
         public List<Category> GetAll()
         {
-            return repository.GetAll();
-        }
-        public void CategoryAdd(Category category)
-        {
-            if (category.CategoryName == "" || category.CategoryName.Length <= 3 || category.CategoryDescription == "") 
-            {
-                //Hata Mesajı
-            }
-            else
-            {
-                repository.Insert(category);
-            }
+            return _categoryDal.GetAll();
         }
     }
 }
