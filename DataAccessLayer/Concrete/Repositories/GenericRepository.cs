@@ -27,6 +27,12 @@ namespace DataAccessLayer.Concrete.Repositories
             context.SaveChanges();
         }
 
+        public T Find(Expression<Func<T, bool>> filter)
+        {
+            return _object.SingleOrDefault(filter);
+            //Return only one value.
+        }
+
         public List<T> Get(Expression<Func<T, bool>> filter)
         {
             return _object.Where(filter).ToList();
