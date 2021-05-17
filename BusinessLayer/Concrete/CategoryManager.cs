@@ -5,6 +5,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,6 +35,14 @@ namespace BusinessLayer.Concrete
         public void CategoryUpdate(Category category)
         {
             _categoryDal.Update(category);
+        }
+
+        public int Get(Expression<Func<Category, bool>> filter)
+        {
+            var result1= _categoryDal.Get(c => c.CategoryStatus == true);
+            var result2= _categoryDal.Get(c => c.CategoryStatus == false);
+            var diffrence = result1.Count() - result2.Count();
+            return diffrence;
         }
 
         public List<Category> GetAll()

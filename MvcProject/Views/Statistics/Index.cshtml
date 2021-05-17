@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<div class="card-deck">
+    <div class="card text-white bg-primary mb-4 " style="max-width: 20rem;">
+        <div class="card-header">Toplam Kategori Sayısı</div>
+        <div class="card-body">
+            <h5 class="card-text"> @ViewBag.CategoryCount</h5>
+        </div>
+    </div>
+    <div class="card text-white bg-danger mb-4 " style="max-width: 20rem;">
+        <div class="card-header">Yazılım Kategorisine Ait Başlık Sayısı</div>
+        <div class="card-body">
+            <h5 class="card-text"> @ViewBag.HeadingCount</h5>
+        </div>
+    </div>
+    <div class="card text-white bg-cyan mb-4 " style="max-width: 20rem;">
+        <div class="card-header">Yazar İsminde A harfi içeren Yazar Sayısı </div>
+        <div class="card-body">
+            <h5 class="card-text"> @ViewBag.ContainA</h5>
+        </div>
+    </div>
+    <div class="card text-white bg-gradient-green mb-4 " style="max-width: 20rem;">
+        <div class="card-header">En Fazla Başlığa Sahip Kategori Adı</div>
+        <div class="card-body">
+            <h5 class="card-text"> @ViewBag.HeadingMax</h5>
+        </div>
+    </div>
+    <div class="card text-white bg-navy mb-4 " style="max-width: 20rem;">
+        <div class="card-header">True ve False Değerler Farkı</div>
+        <div class="card-body">
+            <h5 class="card-text"> @ViewBag.Difference</h5>
+        </div>
+    </div>
+</div>
