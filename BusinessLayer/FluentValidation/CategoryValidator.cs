@@ -18,5 +18,6 @@ namespace BusinessLayer.FluentValidation
             RuleFor(x => x.CategoryName).MinimumLength(3).WithMessage(Messages.CategoryNameMinimumLength);
             RuleFor(x => x.CategoryName).MaximumLength(20).WithMessage(Messages.CategoryNameMaximumLength);
         }
+
     }
 }
