@@ -11,7 +11,6 @@ namespace BusinessLayer.Abstract
     public interface ICategoryService
     {
         List<Category> GetAll();
-        int Get(Expression<Func<Category, bool>> filter);
         void CategoryAdd(Category category);
         Category GetById(int id);
         void CategoryDelete(Category category);

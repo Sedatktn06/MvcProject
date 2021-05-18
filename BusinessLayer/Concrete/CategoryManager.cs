@@ -37,13 +37,7 @@ namespace BusinessLayer.Concrete
             _categoryDal.Update(category);
         }
 
-        public int Get(Expression<Func<Category, bool>> filter)
-        {
-            var result1= _categoryDal.Get(c => c.CategoryStatus == true);
-            var result2= _categoryDal.Get(c => c.CategoryStatus == false);
-            var diffrence = result1.Count() - result2.Count();
-            return diffrence;
-        }
+       
 
         public List<Category> GetAll()
         {
@@ -52,7 +46,7 @@ namespace BusinessLayer.Concrete
 
         public Category GetById(int id)
         {
-            return _categoryDal.Find(c=>c.CategoryID==id);
+            return _categoryDal.Get(c=>c.CategoryID==id);
         }
     }
 }
