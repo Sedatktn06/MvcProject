@@ -16,13 +16,10 @@
     @Html.ValidationMessageFor(w => w.HeadingName)
     <br />
     @Html.Label("Kategori")
-    @Html.TextBoxFor(w => w.CategoryID, new { @class = "form-control" })
-    @Html.ValidationMessageFor(w => w.CategoryID)
-
+    @Html.DropDownListFor(h => h.CategoryID, (List<SelectListItem>)ViewBag.valueCategoryView, new { @class = "form-control" })
     <br />
     @Html.Label("Yazar")
-    @Html.TextBoxFor(w => w.WriterID, new { @class = "form-control" })
-    @Html.ValidationMessageFor(w => w.WriterID)
+    @Html.DropDownListFor(h => h.WriterID, (List<SelectListItem>)ViewBag.valueWriterView, new { @class = "form-control" })
     <br />
 
     <button class="btn btn-info">Başlığı Oluştur</button>
