@@ -21,6 +21,7 @@ namespace BusinessLayer.Constants
         public static string WriterSurnameMaximumLength = " Lütfen 50 karakterden fazla değer girişi yapmayınız.";
         public static string NotEmptyAbout = " Hakkımda kısmını boş geçemezsiniz.";
         public static string MustContainA = "Hakkında kısmında mutlaka A harfi bulunmalıdır";
+        public static string NotEmptyTitle = "Ünvan kısmını boş geçemezsiniz.";
 
         
     }

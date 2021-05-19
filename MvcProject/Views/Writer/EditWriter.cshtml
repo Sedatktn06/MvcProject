@@ -2,18 +2,23 @@
 
 
 @{
-    ViewBag.Title = "AddWriter";
+    ViewBag.Title = "EditWriter";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Yeni Yazar Ekleme Sayfası</h1>
+
 <br />
-@using (Html.BeginForm("AddWriter", "Writer", FormMethod.Post)) 
+<h2>Yazar Düzenleme Sayfası</h2>
+
+@using (Html.BeginForm("EditWriter", "Writer", FormMethod.Post)) 
 {
 <div class="form-group">
+    @Html.Label("Yazar ID")
+    @Html.TextBoxFor(w => w.WriterID, new { @class = "form-control" })
+    <br />
     @Html.Label("Yazar Adı")
     @Html.TextBoxFor(w => w.WriterName, new { @class = "form-control" })
-    @Html.ValidationMessageFor(w => w.WriterName)
+    @Html.ValidationMessageFor(w => w.WriterName, null, new { @class = "text-danger" })
     <br />
     @Html.Label("Yazar Soyadı")
     @Html.TextBoxFor(w => w.WriterSurname, new { @class = "form-control" })
@@ -31,16 +36,15 @@
     @Html.TextBoxFor(w => w.WriterImage, new { @class = "form-control" })
     @Html.ValidationMessageFor(w => w.WriterImage)
     <br />
-    @Html.Label("Yazar Ünvan")
+    @Html.Label("Yazar Ünvanı")
     @Html.TextBoxFor(w => w.WriterTitle, new { @class = "form-control" })
     @Html.ValidationMessageFor(w => w.WriterTitle)
     <br />
     @Html.Label("Yazar Hakkında")
-    @Html.TextBoxFor(w => w.WriterTitle, new { @class = "form-control" })
-    @Html.ValidationMessageFor(w => w.WriterTitle)
+    @Html.TextBoxFor(w => w.WriterAbout, new { @class = "form-control" })
+    @Html.ValidationMessageFor(w => w.WriterAbout)
     <br />
-
-    <button class="btn btn-info">Yazarı Ekle</button>
+    <button class="btn btn-success">Değişiklikleri Uygula</button>
 </div>
 }
 
