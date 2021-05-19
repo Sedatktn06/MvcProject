@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +13,34 @@ namespace MvcProject.Controllers
     {
 
         HeadingManager headingManager = new HeadingManager(new EfHeadingDal());
+        CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
         
         public ActionResult Index()
         {
             var headingValues = headingManager.GetAll();
             return View(headingValues);
+        }
+
+        [HttpGet]
+        public ActionResult AddHeading()
+        {
+            List<SelectListItem> valueCategory = (from x in categoryManager.GetAll()
+                                                  select new SelectListItem
+                                                  {
+                                                      Text = x.CategoryName,
+                                                      Value = x.CategoryID.ToString()
+                                                  }).ToList();
+            ViewBag.valueCategoryView = valueCategory;
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult AddHeading(Heading heading)
+        {
+            heading.HeadingDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+            headingManager.HeadingAdd(heading);
+            return RedirectToAction("Index");
         }
     }
 }
