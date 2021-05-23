@@ -37,6 +37,7 @@ namespace MvcProject.Controllers
             ValidationResult results = writerValidator.Validate(writer);
             if (results.IsValid)
             {
+                writer.WriterImage = "https://dosya.wmaraci.com/nedir/admin.png";
                 writerManager.WriterAdd(writer);
                 return RedirectToAction("Index");
             }
