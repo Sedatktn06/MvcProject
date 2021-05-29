@@ -54,9 +54,21 @@ namespace MvcProject.Controllers
         }
 
 
-        public ActionResult ContentByHeading()
+        [HttpGet]
+        public ActionResult EditHeading(int id)
         {
-            return View();
+
+            List<SelectListItem> valueCategory = (from x in categoryManager.GetAll()
+                                                  select new SelectListItem
+                                                  {
+                                                      Text = x.CategoryName,
+                                                      Value = x.CategoryID.ToString()
+                                                  }).ToList();
+
+            ViewBag.valueCategoryView = valueCategory;
+            var headingValue = headingManager.GetById(id);
+            return View(headingValue);
         }
+
     }
 }
