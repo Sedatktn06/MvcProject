@@ -10,13 +10,23 @@
 
 @using (Html.BeginForm("EditHeading", "Heading", FormMethod.Post))
 {
-    <div class="form-group">
-        @Html.Label("Başlık ID")
-        @Html.TextBoxFor(h => h.HeadingName, new { @class = "form-control" })
-        <br />
-        @Html.DropDownListFor(c => c.CategoryID, (List<SelectListItem>)ViewBag.valueCategoryView, new { @class = "form-control" })
-        <br />
-        <button class="btn btn-success">Güncelle</button>
-    </div>
+<div class="form-group">
+    @Html.Label("Başlık ID")
+    @Html.TextBoxFor(h => h.HeadingID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Başlık Adı")
+    @Html.TextBoxFor(h => h.HeadingName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(h => h.HeadingDate, new { @class = "form-control" })
+    <br />
+    @Html.Label("Yazar ID")
+    @Html.TextBoxFor(h => h.WriterID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kategori")
+    @Html.DropDownListFor(c => c.CategoryID, (List<SelectListItem>)ViewBag.valueCategoryView, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</div>
 }
 
