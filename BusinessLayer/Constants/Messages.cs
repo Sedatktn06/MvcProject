@@ -23,6 +23,12 @@ namespace BusinessLayer.Constants
         public static string MustContainA = "Hakkında kısmında mutlaka A harfi bulunmalıdır";
         public static string NotEmptyTitle = "Ünvan kısmını boş geçemezsiniz.";
 
-        
+        //Contact
+        public static string NotEmptyUserMail = "Mail adresini boş geçemezsiniz!";
+        public static string NotEmptySubject = "Konu adını boş geçemezsiniz!";
+        public static string NotEmptyUserName = "Kullanıcı adını boş geçemezsiniz!";
+        public static string SubjectNameMinimumLength = "Lütfen en az 3 karakter girişi yapınız.";
+        public static string UserNameMinimumLength = "Lütfen en az 3 karakter girişi yapınız.";
+        public static string SubjectNameMaximumLength = "Lütfen 50 karakterden fazla değer girişi yapmayınız.";
     }
 }
