@@ -22,5 +22,12 @@ namespace MvcProject.Controllers
             var contactValues = contactManager.GetAll();
             return View(contactValues);
         }
+
+
+        public ActionResult GetContactDetails(int id)
+        {
+            var contactValues = contactManager.GetById(id);
+            return View(contactValues);
+        }
     }
 }
