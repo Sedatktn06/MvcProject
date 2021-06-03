@@ -29,5 +29,11 @@ namespace MvcProject.Controllers
             var contactValues = contactManager.GetById(id);
             return View(contactValues);
         }
+
+        public PartialViewResult ContactDetailsPartial()
+        {
+            return PartialView();
+        }
+     
     }
 }
