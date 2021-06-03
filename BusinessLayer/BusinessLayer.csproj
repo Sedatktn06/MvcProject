@@ -71,6 +71,7 @@
     <Compile Include="Constants\Messages.cs" />
     <Compile Include="FluentValidation\CategoryValidator.cs" />
     <Compile Include="FluentValidation\ContactValidator.cs" />
+    <Compile Include="FluentValidation\MessageValidator.cs" />
     <Compile Include="FluentValidation\WriterValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

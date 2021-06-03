@@ -30,5 +30,12 @@ namespace BusinessLayer.Constants
         public static string SubjectNameMinimumLength = "Lütfen en az 3 karakter girişi yapınız.";
         public static string UserNameMinimumLength = "Lütfen en az 3 karakter girişi yapınız.";
         public static string SubjectNameMaximumLength = "Lütfen 50 karakterden fazla değer girişi yapmayınız.";
+
+        //Message
+        public static string NotEmptyReceiverMail = "Alıcı adresini boş geçemezsiniz!";
+        public static string NotEmptyMessage = "Mesajı boş geçemezsiniz!";
+        public static string SubjectNameMaximumLength2 = "Lütfen 100 karakterden fazla değer girişi yapmayınız.";
+        public static string InvalidEmail = "Geçersiz mail adresi";
+
     }
 }

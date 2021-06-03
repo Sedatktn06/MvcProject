@@ -19,9 +19,14 @@ namespace BusinessLayer.Concrete
             _messageDal = messageDal;
         }
 
-        public List<Message> GetAll()
+        public List<Message> GetAllInbox()
         {
             return _messageDal.List(m => m.ReceiverMail == "admin@gmail.com");
+        }
+
+        public List<Message> GetAllSendbox()
+        {
+            return _messageDal.List(m => m.SenderMail == "admin@gmail.com");
         }
 
         public Message GetById(int id)
@@ -31,7 +36,7 @@ namespace BusinessLayer.Concrete
 
         public void MessageAdd(Message message)
         {
-            throw new NotImplementedException();
+            _messageDal.Insert(message);
         }
 
         public void MessageDelete(Message message)
